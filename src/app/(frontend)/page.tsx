@@ -1,5 +1,6 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
+import SiteHeader from '@/components/SiteHeader'
 import CartButton from '@/components/CartButton'
 import ProductGrid from '@/components/ProductGrid'
 
@@ -17,25 +18,8 @@ export default async function HomePage() {
   return (
     <div>
       {/* Top Header */}
-      <div className="header-container">
-        <header className="site-header">
-          <a href="/" className="brand-wrapper">
-            <img src="/logo.png" alt="OroqCoco logo" className="brand-logo-img" />
-            <div>
-              <span className="brand-name">
-                Oroq<span>Coco</span>
-              </span>
-              <span className="brand-tagline">Oroquieta City Agricultural Cooperative</span>
-            </div>
-          </a>
-          <div className="nav-right">
-            <a href="/admin" className="nav-admin-link">
-              Admin Portal
-            </a>
-            <CartButton />
-          </div>
-        </header>
-      </div>
+      <SiteHeader />
+      <CartButton />
 
       {/* Hero Banner */}
       <section className="hero-wrapper">
@@ -70,8 +54,7 @@ export default async function HomePage() {
           <div className="filter-empty">
             <h3>No products listed yet</h3>
             <p style={{ marginTop: '0.5rem' }}>
-              Head into the <a href="/admin" className="nav-admin-link">Admin Panel</a> to add your
-              first published products.
+              Check back soon for fresh coconut products from our cooperative.
             </p>
           </div>
         ) : (
