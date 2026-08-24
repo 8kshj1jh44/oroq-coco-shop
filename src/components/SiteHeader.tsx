@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useCart } from '@/context/CartContext'
 
 export default function SiteHeader() {
   const [hidden, setHidden] = useState(false)
+  const { totalQuantity, openCart } = useCart()
 
   useEffect(() => {
     let lastScrollY = window.scrollY
@@ -34,6 +36,10 @@ export default function SiteHeader() {
             <span className="brand-tagline">Oroquieta City Agricultural Cooperative</span>
           </div>
         </a>
+        <button className="header-cart" onClick={openCart} aria-label={`Open basket, ${totalQuantity} items`}>
+          <span className="header-cart-icon">🛒</span>
+          {totalQuantity > 0 && <span className="header-cart-count">{totalQuantity}</span>}
+        </button>
       </header>
     </div>
   )

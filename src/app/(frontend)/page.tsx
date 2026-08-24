@@ -1,7 +1,6 @@
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import SiteHeader from '@/components/SiteHeader'
-import CartButton from '@/components/CartButton'
 import ProductGrid from '@/components/ProductGrid'
 
 export default async function HomePage() {
@@ -19,7 +18,6 @@ export default async function HomePage() {
     <div>
       {/* Top Header */}
       <SiteHeader />
-      <CartButton />
 
       {/* Hero Banner */}
       <section className="hero-wrapper">
@@ -143,13 +141,22 @@ export default async function HomePage() {
               <p className="directory-pluscode">Plus Code: FRR2+M3</p>
               <a
                 className="maps-link"
-                href="https://www.google.com/maps/search/?api=1&query=Behind%20Poligrates%2C%20Deloso%20street%2C%20Purok%202%2C%20Oroquieta%20City%2C%20Misamis%20Occidental"
+                href="https://www.google.com/maps/place/OroqCoco+Central+Office+-+Oroquieta+City+Agricultural+Cooperative+(OCAC)/@8.4917331,123.7976008,17z/data=!3m1!4b1!4m6!3m5!1s0x32551fd480107f25:0xc74c6cc0b13be5fa!8m2!3d8.4917278!4d123.8001811!16s%2Fg%2F11nm9tfbkt"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 📍 Get Directions
               </a>
-              <p className="directory-phone">📞 0966 043 8027 / 0946 267 2903</p>
+              <a
+                className="directory-phone"
+                href="tel:+639660438027"
+                aria-label="Call OroqCoco at 0966 043 8027"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                </svg>
+                0966 043 8027 / 0946 267 2903
+              </a>
               <p className="directory-cta">
                 Interested in earning as an OroqCoco reseller? Contact us!
               </p>
@@ -186,30 +193,6 @@ export default async function HomePage() {
         </div>
         <p className="footer-bottom">© 2026 OroqCoco - Oroquieta City Agricultural Cooperative (OCAC). All rights reserved.</p>
       </footer>
-
-      {/* Sticky Chat / Call */}
-      <div className="float-actions">
-        <a
-          className="float-btn float-call"
-          href="tel:+639660438027"
-          aria-label="Call OroqCoco at 0966 043 8027"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-          </svg>
-        </a>
-        <a
-          className="float-btn float-chat"
-          href="https://www.facebook.com/OroqCoco"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Chat with OroqCoco Cooperative on Facebook"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
-          </svg>
-        </a>
-      </div>
     </div>
   )
 }
